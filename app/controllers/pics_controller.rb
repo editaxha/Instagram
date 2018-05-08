@@ -5,14 +5,14 @@ class PicsController < ApplicationController
     @pics = Pic.all.order("created_at DESC")
   end
   def new
-    @pic = Pic.new
+    @pic = current_user.pics.build
   end 
   
   def show
   end
   
   def create
-    @pic = Pic.new(pic_params)
+    @pic = current_user.pics.build(pic_params)
     
     if @pic.save
       redirect_to @pic, notice: "Yes! It was posted"
