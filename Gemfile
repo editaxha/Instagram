@@ -30,6 +30,7 @@ gem 'masonry-rails', '~> 0.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
@@ -41,12 +42,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
-group :development do
-  gem 'sqlite3'
-end
-
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+   gem 'pg', '~> 0.20'
+   gem 'rails_12factor'
 end
